@@ -1,0 +1,24 @@
+body {
+  background-color: #81a69b;
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/double-bubble-outline.png);
+  margin: 0;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 2em;
+  background-color: orangered;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Gloria Hallelujah", cursive;
+}
