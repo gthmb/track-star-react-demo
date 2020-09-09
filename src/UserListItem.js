@@ -1,15 +1,18 @@
 import React from 'react';
+import StatusIndicator from './StatusIndicator';
 
-export const UserListItem = (props) => {
+export const UserListItem = ({ firstName, lastName, company, status }) => {
     return (
         <li>
-            <h3>
-                {props.firstName} {props.lastName}
-            </h3>
-            <div className="stats">
-                <p>Company: {props.company}</p>
-                <p>Status: {props.status}</p>
-            </div>
+                <h3>
+                    <span>
+                        {firstName} {lastName}
+                    </span>
+                    <StatusIndicator status={status} />
+                </h3>
+                <div className="stats">
+                    <p>Company: {company}</p>
+                </div>
         </li>
     );
 };
