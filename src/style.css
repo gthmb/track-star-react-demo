@@ -52,13 +52,27 @@ h5 {
     padding: 0.25em 1em;
     background-color: orangered;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.user-list ul li h3 {
-    border-radius: 8px 8px 0 0;
-    padding: 0.25em 1em;
-    background-color: orangered;
-    color: white;
+.user-list ul li .status-indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.user-list ul li .status-indicator.active {
+    background-color: green;
+}
+
+.user-list ul li .status-indicator.away {
+    background-color: gold;
+}
+
+.user-list ul li .status-indicator.offline {
+    background-color: lightgray;
 }
 
 .user-list ul li .stats {

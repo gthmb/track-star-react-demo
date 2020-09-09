@@ -1,29 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { UserListItem } from './UserListItem';
+import { getUsers } from './ApiService';
 
 const UserList = () => {
+    const [users, updateUsers] = useState([]);
+
+    useEffect(() => {
+        getUsers()
+            .then(updateUsers)
+            .catch(() => {
+                updateUsers([]);
+            });
+    }, []);
+
     return (
         <div className="user-list">
             <p>This is a user list!</p>
             <ul>
-                <UserListItem
-                    firstName="Jonathan"
-                    lastName="Greene"
-                    company="Pixability"
-                    status="active"
-                />
-                <UserListItem
-                    firstName="Colleen"
-                    lastName="Greene"
-                    company="Children's Hosptial"
-                    status="offline"
-                />
-                <UserListItem
-                    firstName="Tyrika"
-                    lastName="Greene"
-                    company="Demolition Inc."
-                    status="away"
-                />
+                {users.map((user) => (
+                    <UserListItem key={user.id} {...user} />
+                ))}
             </ul>
         </div>
     );
