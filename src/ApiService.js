@@ -1,3 +1,14 @@
+const host =
+    window.location.hostname === 'localhost'
+        ? 'http://localhost:3000'
+        : 'https://track-star-api.herokuapp.com';
+// : 'https://my-json-server.typicode.com/gthmb/track-star-json-server';
+
+const Urls = {
+    Users: `${host}/users/`,
+    TimeEntries: `${host}/time-entries/`,
+};
+
 const storeLocal = (key, value) => {
     window.localStorage.setItem(key, JSON.stringify(value));
 };
@@ -23,15 +34,16 @@ const put = async (url, data) => {
 const post = (url, data) => write(url, 'POST', data);
 
 export const getUsers = async () => {
-    const response = await fetch('http://localhost:3000/users');
+    const response = await fetch(Urls.Users);
     const users = await response.json();
     return users;
 };
 
 export const getUserDetail = async (id, embedTime = true) => {
     try {
+        console.log(`${Urls.Users}${id}${embedTime ? '?_embed=time-entries' : ''}`);
         const response = await fetch(
-            `http://localhost:3000/users/${id}${embedTime ? '?_embed=time-entries' : ''}`
+            `${Urls.Users}${id}${embedTime ? '?_embed=time-entries' : ''}`
         );
         const user = await response.json();
         if (Object.keys(user).length === 0) {
@@ -44,12 +56,12 @@ export const getUserDetail = async (id, embedTime = true) => {
 };
 
 export const punchUserIn = async (userId) => {
-    const entryResponse = await post('http://localhost:3000/time-entries', {
+    const entryResponse = await post(Urls.TimeEntries, {
         userId,
         start: new Date().toISOString(),
     });
     const timeEntry = await entryResponse.json();
-    await put(`http://localhost:3000/users/${userId}`, {
+    await put(`${Urls.Users}${userId}`, {
         status: 'active',
         activeEntry: timeEntry.id,
     });
@@ -57,13 +69,13 @@ export const punchUserIn = async (userId) => {
 };
 
 export const punchUserOut = async (entryId) => {
-    const entryResponse = await put(`http://localhost:3000/time-entries/${entryId}`, {
+    const entryResponse = await put(`${Urls.TimeEntries}${entryId}`, {
         end: new Date().toISOString(),
     });
     const entry = await entryResponse.json();
     const { userId } = entry;
 
-    await put(`http://localhost:3000/users/${userId}`, {
+    await put(`${Urls.Users}${userId}`, {
         status: 'away',
         activeEntry: null,
     });
@@ -72,7 +84,7 @@ export const punchUserOut = async (entryId) => {
 };
 
 export const login = async () => {
-    const response = await fetch('http://localhost:3000/users/19b83e7');
+    const response = await fetch(`${Urls.Users}19b83e7`);
     const user = await response.json();
     storeLocal('user', user.id);
     return user;
