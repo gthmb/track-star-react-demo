@@ -19,6 +19,7 @@
         "start:api": "json-server --watch api/db.json"
     },
     "dependencies": {
+        "@reach/router": "^1.3.4",
         "react": "^16.13.1",
         "react-dom": "^16.13.1"
     },

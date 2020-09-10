@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import StatusIndicator from './StatusIndicator';
 
-export const UserListItem = ({ firstName, lastName, company, status }) => {
+export const UserListItem = ({ firstName, lastName, company, status, id }) => {
     return (
         <li>
+            <Link to={`/user/${id}`}>
                 <h3>
                     <span>
                         {firstName} {lastName}
@@ -13,6 +15,7 @@ export const UserListItem = ({ firstName, lastName, company, status }) => {
                 <div className="stats">
                     <p>Company: {company}</p>
                 </div>
+            </Link>
         </li>
     );
 };
