@@ -1,65 +1,92 @@
 {
-    "users": [
-        {
-            "firstName": "Lenna",
-            "lastName": "Flatley",
-            "company": "Runolfsson PLC",
-            "id": "19b83e7",
-            "status": "away"
-        },
-        {
-            "firstName": "Alf",
-            "lastName": "Brown",
-            "company": "White and Sons",
-            "id": "c8b641f",
-            "status": "active"
-        },
-        {
-            "firstName": "Emmitt",
-            "lastName": "Upton",
-            "company": "Baumbach LLC",
-            "id": "64097a",
-            "status": "active"
-        },
-        {
-            "firstName": "Sheldon",
-            "lastName": "Moore",
-            "company": "Senger LLC",
-            "id": "6a41e74",
-            "status": "offline"
-        },
-        {
-            "firstName": "Braxton",
-            "lastName": "Brekke",
-            "company": "Wolf and Sons",
-            "id": "a790938",
-            "status": "offline"
-        }
-    ],
-    "time-entries": [
-        {
-            "id": "60a3c75",
-            "userId": "19b83e7",
-            "start": "Tue Sep 08 2020 22:10:23 GMT-0500",
-            "end": "Tue Sep 08 2020 24:10:23 GMT-0500"
-        },
-        {
-            "id": "8d9e5c8",
-            "userId": "19b83e7",
-            "start": "Tue Sep 06 2020 12:10:23 GMT-0500",
-            "end": "Tue Sep 06 2020 15:10:23 GMT-0500"
-        },
-        {
-            "id": "96c004e",
-            "userId": "c8b641f",
-            "start": "Tue Sep 07 2020 12:10:23 GMT-0500",
-            "end": "Tue Sep 07 2020 15:10:23 GMT-0500"
-        },
-        {
-            "userId": "19b83e7",
-            "start": "Tue Sep 04 2020 12:10:23 GMT-0500",
-            "end": "Tue Sep 04 2020 15:10:23 GMT-0500",
-            "id": "2sIQtcD"
-        }
-    ]
+  "users": [
+    {
+      "firstName": "Lenna",
+      "lastName": "Flatley",
+      "company": "Runolfsson PLC",
+      "status": "away",
+      "activeEntry": null,
+      "id": "19b83e7"
+    },
+    {
+      "firstName": "Alf",
+      "lastName": "Brown",
+      "company": "White and Sons",
+      "status": "away",
+      "activeEntry": null,
+      "id": "c8b641f"
+    },
+    {
+      "firstName": "Emmitt",
+      "lastName": "Upton",
+      "company": "Baumbach LLC",
+      "status": "away",
+      "activeEntry": null,
+      "id": "64097a"
+    },
+    {
+      "firstName": "Sheldon",
+      "lastName": "Moore",
+      "company": "Senger LLC",
+      "id": "6a41e74",
+      "status": "offline"
+    },
+    {
+      "firstName": "Braxton",
+      "lastName": "Brekke",
+      "company": "Wolf and Sons",
+      "id": "a790938",
+      "status": "offline"
+    }
+  ],
+  "time-entries": [
+    {
+      "id": "8d9e5c8",
+      "userId": "19b83e7",
+      "start": "Tue Sep 06 2020 12:10:23 GMT-0500",
+      "end": "Tue Sep 06 2020 18:13:31 GMT-0500"
+    },
+    {
+      "id": "96c004e",
+      "userId": "c8b641f",
+      "start": "Tue Sep 07 2020 12:10:23 GMT-0500",
+      "end": "Tue Sep 07 2020 15:10:23 GMT-0500"
+    },
+    {
+      "id": "2sIQtcD",
+      "userId": "c8b641f",
+      "start": "Tue Sep 04 2020 12:10:23 GMT-0500",
+      "end": "Tue Sep 04 2020 15:10:23 GMT-0500"
+    },
+    {
+      "userId": "19b83e7",
+      "start": "2020-09-10T04:51:10.508Z",
+      "end": "2020-09-10T04:51:13.371Z",
+      "id": "qvNFkER"
+    },
+    {
+      "userId": "19b83e7",
+      "start": "2020-09-10T04:51:19.872Z",
+      "end": "2020-09-10T04:52:46.500Z",
+      "id": "MlJoh5a"
+    },
+    {
+      "userId": "64097a",
+      "start": "2020-09-10T05:22:36.982Z",
+      "end": "2020-09-10T05:22:44.922Z",
+      "id": "AfxY9-w"
+    },
+    {
+      "userId": "64097a",
+      "start": "2020-09-10T05:22:50.236Z",
+      "end": "2020-09-10T05:23:05.679Z",
+      "id": "_hY74AI"
+    },
+    {
+      "userId": "19b83e7",
+      "start": "2020-09-10T05:22:56.643Z",
+      "end": "2020-09-10T05:23:00.669Z",
+      "id": "80Jhkqz"
+    }
+  ]
 }
