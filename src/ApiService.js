@@ -28,9 +28,11 @@ export const getUsers = async () => {
     return users;
 };
 
-export const getUserDetail = async (id) => {
+export const getUserDetail = async (id, embedTime = true) => {
     try {
-        const response = await fetch(`http://localhost:3000/users/${id}?_embed=time-entries`);
+        const response = await fetch(
+            `http://localhost:3000/users/${id}${embedTime ? '?_embed=time-entries' : ''}`
+        );
         const user = await response.json();
         if (Object.keys(user).length === 0) {
             throw new Error('no-user-found');
@@ -72,7 +74,7 @@ export const punchUserOut = async (entryId) => {
 export const login = async () => {
     const response = await fetch('http://localhost:3000/users/19b83e7');
     const user = await response.json();
-    storeLocal('user', user);
+    storeLocal('user', user.id);
     return user;
 };
 
@@ -80,4 +82,12 @@ export const logout = () => {
     window.localStorage.setItem('user', null);
 };
 
-export const getActiveUser = () => getLocal('user');
+export const getActiveUser = async () => {
+    const userId = getLocal('user');
+
+    if (!userId) {
+        return Promise.resolve(false);
+    }
+
+    return getUserDetail(userId, false);
+};

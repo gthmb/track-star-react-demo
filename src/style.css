@@ -32,6 +32,12 @@ button {
     cursor: pointer;
 }
 
+button[disabled],
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 button.light-grey {
     color: white;
     background-color: rgb(177, 174, 174);
@@ -145,4 +151,30 @@ ul {
     .user-detail-header p {
         margin-top: 0;
     }
+}
+
+.logout-button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    margin-left: 1em;
+}
+
+.login input {
+    margin-bottom: 30px;
+    font-size: 18px;
+    height: 30px;
+    width: 325px;
+    border: 1px solid #eee;
+    padding: 1em;
+    margin-top: 0.5em;
+}
+
+.login label {
+    display: flex;
+    flex-direction: column;
+}
+
+.login form {
+    margin-bottom: 20px;
 }
